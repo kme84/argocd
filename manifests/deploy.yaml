@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: kuber-app
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: http-server-kuber
   template:
     metadata:
       labels:
-        app: myapp
+        app: http-server-kuber
     spec:
       containers:
       - name: myapp
@@ -23,7 +23,7 @@ metadata:
   name: kuber-service
 spec:
   selector:
-    app: kuber
+    app: http-server-kuber
   ports:
   - port: 80
     targetPort: 8000
